@@ -11,13 +11,13 @@ import requests
 
 # ---- Settings: the only part you change for your own data ----------------
 
-URL = "PASTE YOUR URL HERE"
+URL = "https://disease.sh/v3/covid-19/countries"
 PARAMS = {}
 RECORDS_KEY = None                # the key that holds the list of records (None if the reply is already a list)
 
 RENAME = {}                       # ugly column name -> short column name
-KEEP = []                         # the columns you want, e.g. ["country", "continent", "cases"]
-MUST_HAVE = []                    # drop any row that is empty in these columns
+KEEP = ["country", "continent", "cases", "deaths", "recovered", "tests", "population", "active"]                         # the columns you want, e.g. ["country", "continent", "cases"]
+MUST_HAVE = ["cases", "continent"]                    # drop any row that is empty in these columns
 
 RAW_FILE = Path(__file__).parent / "DATA" / "raw.csv"
 
